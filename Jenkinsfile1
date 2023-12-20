@@ -12,7 +12,7 @@ pipeline {
             steps {
               script {
                   git branch: 'main',
-                  url: 'https://github.com/BWizard06/M324_trafficlight-api'
+                  url: 'https://github.com/bzzlab/M324_trafficlight-api.git'
            }
          }
     }

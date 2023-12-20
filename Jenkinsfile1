@@ -12,7 +12,7 @@ pipeline {
             steps {
               script {
                   git branch: 'main',
-                  url: 'https://github.com/bzzlab/M324_trafficlight-api.git'
+                  url: 'https://github.com/BWizard06/M324_trafficlight-api'
            }
          }
     }
@@ -38,7 +38,7 @@ pipeline {
 
     stage('Run container for testing') {
       steps {
-        sh 'docker run -itd --rm -p 3000:3000 --name traffic-api $registry:$BUILD_NUMBER'
+        sh "docker run -itd --rm -p 3000:3000 --name traffic-api $registry:$BUILD_NUMBER"
       }
     }
     stage('Test') {

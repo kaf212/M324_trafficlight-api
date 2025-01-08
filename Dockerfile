@@ -7,17 +7,17 @@ RUN apt-get update \
 RUN apt-get install -y nano \
     && apt-get install -y bash \
     && apt-get clean
-# create directory server and ...
-RUN mkdir /server
+# create directory backend and ...
+RUN mkdir /backend
 # set it as working directory
 WORKDIR /server
 # copy all local files in the backend into
 # working directory
-COPY server/* .
+COPY backend/* .
 # install all nodejs dependencies
 RUN npm install
 # expose port 3000 of the app
 EXPOSE 3000
-# run server
+# run backend
 CMD ["npm", "run", "server"]
 
